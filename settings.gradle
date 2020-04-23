@@ -1,0 +1,2 @@
+rootProject.name='Ghibli Repertory'
+include ':app'
