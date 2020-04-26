@@ -1,16 +1,30 @@
 package com.example.ghiblirepertory;
+import android.content.Context;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.Adapter;
 
+//import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
-    private List<String> values;
+   
+    private List<Movies> values;
+    private Context context;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -20,6 +34,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
          TextView txtHeader;
          TextView txtFooter;
          View layout;
+         ImageView image;
+         LinearLayout linearLayout;
 
         public ViewHolder(View v) {
             super(v);
@@ -29,7 +45,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         }
     }
 
-    public void add(int position, String item) {
+    public void add(int position, Movies item) {
         values.add(position, item);
         notifyItemInserted(position);
     }
@@ -40,11 +56,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListAdapter(List<String> myDataset) {
-        values = myDataset;
+    public ListAdapter(List<Movies> values, Context context) {
+        this.values = values;
+        this.context = context;
     }
 
     // Create new views (invoked by the layout manager)
+    @NonNull
     @Override
     public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
@@ -60,16 +78,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        final String name = values.get(position);
-        holder.txtHeader.setText(name);
-        /*holder.txtHeader.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                remove(position);
-            }
-        });*/
-
-        holder.txtFooter.setText("Jose: " + name);
+        final Movies currentMovie = values.get(position);
+        holder.txtHeader.setText(currentMovie.getTitle());
+        holder.txtFooter.setText(currentMovie.getIntro());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
