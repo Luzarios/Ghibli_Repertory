@@ -20,7 +20,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private ListAdapter mAdapter;
+    private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
@@ -30,30 +30,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        // use this setting to
-        // improve performance if you know that changes
-        // in content do not change the layout size
-        // of the RecyclerView
         recyclerView.setHasFixedSize(true);
-        // use a linear layout manager
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         List<String> input = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i <= 22; i++) {
             input.add("Test" + i);
-        }// define an adapter
-        mAdapter = new ListAdapter(input);
-        recyclerView.setAdapter(mAdapter);
+        }
+        adapter = new ListAdapter(input);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
