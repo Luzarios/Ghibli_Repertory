@@ -63,8 +63,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         final Movies currentMovie = values.get(position);
-        holder.txtHeader.setText("oui");
-        holder.txtFooter.setText("non");
+        holder.txtHeader.setText(currentMovie.getTitle());
+        holder.txtFooter.setText(currentMovie.getIntro());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
