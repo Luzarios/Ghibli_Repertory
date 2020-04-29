@@ -1,30 +1,19 @@
 package com.example.ghiblirepertory;
-import android.content.Context;
 
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.Adapter;
 
-//import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
-   
     private List<Movies> values;
-    private Context context;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -34,8 +23,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
          TextView txtHeader;
          TextView txtFooter;
          View layout;
-         ImageView image;
-         LinearLayout linearLayout;
 
         public ViewHolder(View v) {
             super(v);
@@ -56,13 +43,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListAdapter(List<Movies> values, Context context) {
-        this.values = values;
-        this.context = context;
+    public ListAdapter(List<Movies> myDataset) {
+        values = myDataset;
     }
 
     // Create new views (invoked by the layout manager)
-    @NonNull
     @Override
     public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
@@ -73,7 +58,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         return vh;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position

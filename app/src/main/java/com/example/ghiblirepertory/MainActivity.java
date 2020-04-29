@@ -5,13 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,7 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,86 +27,82 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final  String URL_DATA = "https://raw.githubusercontent.com/Luzarios/Ghibli_Repertory/master/Ghibli_Api.json";
+    private static final  String URL_DATA = "https://raw.githubusercontent.com";
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-
-    private List<Movies> moviesList;
-
-    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        makeApiCall();
+    }
+
+    private void showList(List<Movies> moviesList){
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // use a linear layout manager
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        moviesList = new ArrayList<>();
-        loadRecyclerViewData();
+        // define an adapter
+        adapter = new ListAdapter(moviesList);
+        recyclerView.setAdapter(adapter);
     }
 
+    private void makeApiCall(){
 
-
-    private void loadRecyclerViewData() {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
+        /*final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading data...");
-        progressDialog.show();
+        progressDialog.show();*/
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                URL_DATA,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String s) {
-                        progressDialog.dismiss();
-                        try {
-                            JSONObject jsonObject = new JSONObject(s);
-                            JSONArray array = jsonObject.getJSONArray("Movies");
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
 
-                            for (int i = 0; i < array.length(); i++) {
-                                JSONObject o = array.getJSONObject(i);
-                                Movies movies = new Movies(
-                                        o.getString("id"),
-                                        o.getString("title"),
-                                        o.getString("intro"),
-                                        o.getString("description"),
-                                        o.getString("director"),
-                                        o.getString("producer"),
-                                        o.getInt("release_date"),
-                                        o.getString("movie_picture"),
-                                        o.getString("background")
-                                );
-                                moviesList.add(movies);
-                            }
-                            adapter = new ListAdapter(moviesList, getApplicationContext());
-                            recyclerView.setAdapter(adapter);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-                        progressDialog.dismiss();
-                        Toast.makeText(getApplicationContext(), volleyError.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URL_DATA)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+
+        GhibliApi ghibliApi = retrofit.create(GhibliApi.class);
+
+        Call<RestGhibliResponse> call = ghibliApi.getGhibliResponse();
+        call.enqueue(new Callback<RestGhibliResponse>() {
+            @Override
+            public void onResponse(Call<RestGhibliResponse> call, Response<RestGhibliResponse> response) {
+                if(response.isSuccessful() && response.body()!= null ){
+                    List<Movies> moviesList = response.body().getMovie_list();
+                    showList(moviesList);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<RestGhibliResponse> call, Throwable t) {
+                showError();
+            }
+        });
     }
 
-    @Override
+    private void showError() {
+        Toast.makeText(getApplicationContext(), "Ghibli API Error", Toast.LENGTH_LONG).show();
+    }
+}
+
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -128,5 +122,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-}
+    }*/
+
