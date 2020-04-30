@@ -21,7 +21,7 @@
       },
       {
          "title":"Princess Mononoke (1997)",
-         "intro:":"A beautifully realized tale of civilization versus nature.",
+         "intro":"A beautifully realized tale of civilization versus nature.",
          "description":"Ashitaka, a prince of the disappearing Ainu tribe, is cursed by a demonized boar god and must journey to the west to find a cure. Along the way, he encounters San, a young human woman fighting to protect the forest, and Lady Eboshi, who is trying to destroy it. Ashitaka must find a way to bring balance to this conflict.",
          "director":"Hayao Miyazaki",
          "producer":"Toshio Suzuki",
@@ -146,7 +146,7 @@
          "background":"https://zupimages.net/up/20/17/e406.png"
       },
       {
-         "title":"Ocen Waves (1993)",
+         "title":"Ocean Waves (1993)",
          "intro":"A valuable lesson in love and friendship.",
          "description":"As a young man returns home after his first year away at college he recalls his senior year of high school and the iron-willed, big city girl that turned his world upside down.",
          "director":"Tomomi Mochizuki",
@@ -191,13 +191,13 @@
          "background":"https://zupimages.net/up/20/17/inir.png"
       },
       {
-         "title":"Arrietty (2010)",
-         "intro":"Discover a secret world within our own.",
-         "description":"14-year-old Arrietty and the rest of the Clock family live in peaceful anonymity as they make their own home from items 'borrowed' from the house's human inhabitants. However, life changes for the Clocks when a human boy discovers Arrietty.",
-         "director":"Hiromasa Yonebayashi",
-         "producer":"Toshio Yonebayashi",
-         "movie_picture":"https://zupimages.net/up/20/17/wyxk.png",
-         "background":"https://zupimages.net/up/20/17/inir.png"
+         "title": "From Up on Poppy Hill (2011)",
+         "intro": "The thrills of young romance and the hope of a new dawn.",
+         "description": "The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea. The flag means “I pray for safe voyages”. A 17 year-old boy, Shun, always sees this flag from the sea as he rides a tugboat to school. Gradually the pair are drawn to each other but they are faced with a sudden trial. Even so, they keep going without running from facing the hardships of reality.",
+         "director": "Gorō Miyazaki",
+         "producer": "Toshio Suzuki",
+         "movie_picture": "https://zupimages.net/up/20/17/xyel.png",
+         "background": "https://zupimages.net/up/20/17/82on.png"
       }
    ]
 }
