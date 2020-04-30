@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -36,7 +37,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final  String URL_DATA = "https://raw.githubusercontent.com";
+    private static final  String URL_DATA = "https://raw.githubusercontent.com/";
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -50,28 +51,21 @@ public class MainActivity extends AppCompatActivity {
         makeApiCall();
     }
 
-    private void showList(List<Movies> moviesList){
+    private void showList(List<movies> moviesList){
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
-        // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        // define an adapter
-        adapter = new ListAdapter(moviesList);
+        adapter = new ListAdapter(moviesList, getApplicationContext());
         recyclerView.setAdapter(adapter);
     }
 
     private void makeApiCall(){
 
-        /*final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading data...");
-        progressDialog.show();*/
-
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
-
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL_DATA)
@@ -85,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<RestGhibliResponse> call, Response<RestGhibliResponse> response) {
                 if(response.isSuccessful() && response.body()!= null ){
-                    List<Movies> moviesList = response.body().getMovie_list();
-                    showList(moviesList);
+                    List<movies> movies = response.body().getMovies();
+                    showList(movies);
                 }
             }
 
@@ -100,9 +94,9 @@ public class MainActivity extends AppCompatActivity {
     private void showError() {
         Toast.makeText(getApplicationContext(), "Ghibli API Error", Toast.LENGTH_LONG).show();
     }
-}
 
-    /*@Override
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -122,5 +116,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }*/
-
+    }
+        }

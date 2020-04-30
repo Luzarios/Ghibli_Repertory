@@ -4,16 +4,12 @@ import java.util.List;
 
 public class RestGhibliResponse {
 
+    private String name;
+    private List<movies> movies;
 
-    private String program;
-    private List<Movies> movie_list;
+    public List<movies> getMovies() {
 
-    public List<Movies> getMovie_list() {
-        return movie_list;
-    }
-
-    public String getProgram() {
-        return program;
+        return movies;
     }
 
 }
