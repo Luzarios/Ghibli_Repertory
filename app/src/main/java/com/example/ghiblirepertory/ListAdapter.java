@@ -1,12 +1,15 @@
 package com.example.ghiblirepertory;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +30,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         public TextView txtFooter;
         public View layout;
         public ImageView imageView;
+        public RelativeLayout relativeLayout;
 
         public ViewHolder(View v) {
             super(v);
@@ -34,6 +38,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
             txtFooter = (TextView) v.findViewById(R.id.secondLine);
             imageView = (ImageView) v.findViewById(R.id.icon);
+            relativeLayout = (RelativeLayout) v.findViewById(R.id.parent_layout);
 
         }
     }
@@ -75,16 +80,28 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         // - replace the contents of the view with that element
         final movies current_movie = values.get(position);
         holder.txtHeader.setText(current_movie.getTitle());
-        /*holder.txtHeader.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                remove(position);
-            }
-        });*/
-
         holder.txtFooter.setText(current_movie.getIntro());
         Picasso.with(context).load(current_movie.getMovie_picture()).into(holder.imageView);
-    }
+
+        holder.relativeLayout.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,current_movie.getTitle(), Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(context, DescriptionActivity.class);
+                intent.putExtra("movie_picture", current_movie.getMovie_picture());
+                intent.putExtra("title", current_movie.getTitle());
+                intent.putExtra("director", current_movie.getDirector());
+                intent.putExtra("producer", current_movie.getProducer());
+                intent.putExtra("composer", current_movie.getComposer());
+                intent.putExtra("intro", current_movie.getIntro());
+                intent.putExtra("description", current_movie.getDescription());
+                context.startActivity(intent);
+            }
+        }
+
+        );
+        }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override

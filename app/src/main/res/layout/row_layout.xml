@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="150dp"
-    android:padding="6dip">
+    android:padding="6dip"
+    android:id="@+id/parent_layout">
 
     <ImageView
         android:id="@+id/icon"
@@ -27,8 +29,13 @@
         android:ellipsize="marquee"
         android:fontFamily="@font/eagle_lake"
         android:gravity="center|top"
+        android:shadowColor="#0C37DD25"
         android:singleLine="false"
         android:text="Description"
+        android:textColor="#B32C2000"
+        android:textColorHighlight="#09F82222"
+        android:textColorHint="#0FFFFFFF"
+        android:textColorLink="#0B0000"
         android:textSize="12sp"
         tools:ignore="EllipsizeMaxLines" />
 
@@ -47,6 +54,7 @@
         android:fontFamily="@font/trade_winds"
         android:gravity="center|center_vertical"
         android:text="Example application"
+        android:textColor="#9E0000"
         android:textSize="16sp" />
 
 </RelativeLayout>

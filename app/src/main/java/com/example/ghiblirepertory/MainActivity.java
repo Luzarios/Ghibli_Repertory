@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,16 +43,41 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+    private SharedPreferences sharedPreferences;
+    private Gson gson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        makeApiCall();
+        sharedPreferences = getSharedPreferences(Constants.GHIBLI_APP,Context.MODE_PRIVATE);
+
+        gson = new GsonBuilder()
+                .setLenient()
+                .create();
+
+        List<movies> movies = getDataFromCache();
+        if(movies!= null){
+            invokeList(movies);
+        }else{
+            makeApiSummon();
+        }
+
     }
 
-    private void showList(List<movies> moviesList){
+    private List<movies> getDataFromCache() {
+       String jsonMovies = sharedPreferences.getString(Constants.KEY_GHIBLI_LIST, null);
+
+        if(jsonMovies == null){
+            return null;
+        }else {
+            Type listeType = new TypeToken<List<movies>>() {}.getType();
+            return gson.fromJson(jsonMovies, listeType);
+        }
+    }
+
+    private void invokeList(List<movies> moviesList){
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -61,12 +87,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    private void makeApiCall(){
-
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
-
+    private void makeApiSummon(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL_DATA)
                 .addConverterFactory(GsonConverterFactory.create(gson))
@@ -80,7 +101,8 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<RestGhibliResponse> call, Response<RestGhibliResponse> response) {
                 if(response.isSuccessful() && response.body()!= null ){
                     List<movies> movies = response.body().getMovies();
-                    showList(movies);
+                    saveList(movies);
+                    invokeList(movies);
                 }
             }
 
@@ -91,12 +113,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void saveList(List<movies> movies) {
+        String jsonString = gson.toJson(movies);
+
+        sharedPreferences
+                .edit()
+                .putString(Constants.KEY_GHIBLI_LIST, jsonString)
+                .apply();
+        //Toast.makeText(getApplicationContext(), "List saved", Toast.LENGTH_LONG).show();
+
+    }
+
     private void showError() {
         Toast.makeText(getApplicationContext(), "Ghibli API Error", Toast.LENGTH_LONG).show();
     }
 
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -116,5 +149,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
         }

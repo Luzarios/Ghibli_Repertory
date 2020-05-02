@@ -6,8 +6,9 @@ public class movies {
     private String description;
     private String director;
     private String producer;
+    private String composer;
+    private String movie_trailer;
     private String movie_picture;
-    private String background;
 
     public String getTitle() {
         return title;
@@ -29,11 +30,14 @@ public class movies {
         return producer;
     }
 
+    public String getComposer() { return composer; }
+
+    public String getMovie_trailer() {
+        return movie_trailer;
+    }
+
     public String getMovie_picture() {
         return movie_picture;
     }
 
-    public String getBackground() {
-        return background;
-    }
 }
