@@ -3,16 +3,13 @@ package com.example.ghiblirepertory;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
-
-
+import android.widget.VideoView;
 import com.squareup.picasso.Picasso;
-
-import java.util.List;
 
 public class DescriptionActivity extends AppCompatActivity {
 
@@ -30,22 +27,28 @@ public class DescriptionActivity extends AppCompatActivity {
                 getIntent().hasExtra("director") &&
                 getIntent().hasExtra("producer") &&
                 getIntent().hasExtra("composer") &&
+                getIntent().hasExtra("running_time") &&
+                getIntent().hasExtra("rt_score") &&
                 getIntent().hasExtra("intro") &&
-                getIntent().hasExtra("description")) {
+                getIntent().hasExtra("description") &&
+                getIntent().hasExtra("movie_trailer")) {
 
             String movie_picture = getIntent().getStringExtra("movie_picture");
             String title = getIntent().getStringExtra("title");
             String director = getIntent().getStringExtra("director");
             String producer = getIntent().getStringExtra("producer");
             String composer = getIntent().getStringExtra("composer");
+            String running_time = getIntent().getStringExtra("running_time");
+            String rt_score = getIntent().getStringExtra("rt_score");
             String intro = getIntent().getStringExtra("intro");
             String description = getIntent().getStringExtra("description");
+            String movie_trailer = getIntent().getStringExtra("movie_trailer");
 
-            setIncomingIntent(movie_picture, title, director, producer, composer, intro, description);
+            setIncomingIntent(movie_picture, title, director, producer, composer, running_time, rt_score, intro, description, movie_trailer);
         }
     }
 
-    private void setIncomingIntent(String movie_picture, String title, String director, String producer, String composer, String intro, String description) {
+    private void setIncomingIntent(String movie_picture, String title, String director, String producer, String composer, String running_time, String rt_score, String intro, String description, String movie_trailer) {
 
         TextView Title = findViewById(R.id.title);
         Title.setText(title);
@@ -55,6 +58,10 @@ public class DescriptionActivity extends AppCompatActivity {
         Producer.setText(producer);
         TextView Composer = findViewById(R.id.composer);
         Composer.setText(composer);
+        TextView Running_time = findViewById(R.id.running_time);
+        Running_time.setText(running_time);
+        TextView Rt_score = findViewById(R.id.rt_score);
+        Rt_score.setText(rt_score);
         TextView Intro = findViewById(R.id.intro);
         Intro.setText(intro);
         TextView Description = findViewById(R.id.description);
@@ -64,6 +71,14 @@ public class DescriptionActivity extends AppCompatActivity {
         Picasso.with(getApplicationContext())
                 .load(movie_picture)
                 .into(Movie_picture);
+
+        VideoView Movie_trailer = findViewById(R.id.trailer);
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(Movie_trailer);
+        Movie_trailer.setVideoURI(Uri.parse(movie_trailer));
+        Movie_trailer.setMediaController(mediaController);
+        Movie_trailer.requestFocus();
+        Movie_trailer.start();
 
     }
 

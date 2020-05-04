@@ -9,10 +9,18 @@
     <string name="director">Director :</string>
     <string name="producer">Producer :</string>
     <string name="composer">Composer :</string>
+    <string name="time">Time :</string>
+    <string name="rt_score">RT Score :</string>
+
 
     <string name="todo">TODO</string>
     <string name="description">Description :</string>
-    <string name="trailer">Trailer</string>
+    <string name="trailer">Trailer :</string>
     <string name="first_fragment_label" />
     <string name="second_fragment_label" />
+    <string name="running_time">Running time :</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

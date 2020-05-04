@@ -7,6 +7,8 @@ public class movies {
     private String director;
     private String producer;
     private String composer;
+    private String running_time;
+    private String rt_score;
     private String movie_trailer;
     private String movie_picture;
 
@@ -31,6 +33,10 @@ public class movies {
     }
 
     public String getComposer() { return composer; }
+
+    public String getRunning_time() { return running_time; }
+
+    public String getRt_score() { return rt_score; }
 
     public String getMovie_trailer() {
         return movie_trailer;

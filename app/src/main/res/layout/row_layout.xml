@@ -32,7 +32,7 @@
         android:shadowColor="#0C37DD25"
         android:singleLine="false"
         android:text="Description"
-        android:textColor="#B32C2000"
+        android:textColor="#BF000000"
         android:textColorHighlight="#09F82222"
         android:textColorHint="#0FFFFFFF"
         android:textColorLink="#0B0000"
@@ -54,7 +54,7 @@
         android:fontFamily="@font/trade_winds"
         android:gravity="center|center_vertical"
         android:text="Example application"
-        android:textColor="#9E0000"
+        android:textColor="#CC013760"
         android:textSize="16sp" />
 
 </RelativeLayout>

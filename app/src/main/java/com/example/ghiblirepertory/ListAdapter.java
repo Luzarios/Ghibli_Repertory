@@ -94,8 +94,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                 intent.putExtra("director", current_movie.getDirector());
                 intent.putExtra("producer", current_movie.getProducer());
                 intent.putExtra("composer", current_movie.getComposer());
+                intent.putExtra("running_time", current_movie.getRunning_time());
+                intent.putExtra("rt_score", current_movie.getRt_score());
                 intent.putExtra("intro", current_movie.getIntro());
                 intent.putExtra("description", current_movie.getDescription());
+                intent.putExtra("movie_trailer", current_movie.getMovie_trailer());
                 context.startActivity(intent);
             }
         }

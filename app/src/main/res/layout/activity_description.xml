@@ -2,208 +2,274 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/ghibli_movie"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/intro"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:fontFamily="@font/trade_winds"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movie_picture" />
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="185dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:fontFamily="@font/eagle_lake"
-        android:gravity="center_horizontal|top"
-        android:singleLine="false"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/m_description" />
-
-
-    <ImageView
-        android:id="@+id/movie_picture"
-        android:layout_width="142dp"
-        android:layout_height="205dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/exmaple_mp"
-        android:contentDescription="@string/todo" />
-
-    <TextView
-        android:id="@+id/m_title"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/trade_winds"
-        android:text="@string/title"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/movie_picture"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="38dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:fontFamily="@font/eagle_lake"
-        android:gravity="center|center_horizontal"
-        android:singleLine="false"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/m_title"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/m_director"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/trade_winds"
-        android:text="@string/director"
-        android:textSize="12dp"
-        app:layout_constraintStart_toEndOf="@+id/movie_picture"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
-
-    <TextView
-        android:id="@+id/director"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:fontFamily="@font/eagle_lake"
-        android:singleLine="false"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/m_director"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
-
-    <TextView
-        android:id="@+id/m_producer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/trade_winds"
-        android:text="@string/producer"
-        android:textSize="12dp"
-        app:layout_constraintStart_toEndOf="@+id/movie_picture"
-        app:layout_constraintTop_toBottomOf="@+id/director" />
-
-    <TextView
-        android:id="@+id/producer"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:fontFamily="@font/eagle_lake"
-        android:singleLine="false"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/m_producer"
-        app:layout_constraintTop_toBottomOf="@+id/director" />
-
-    <TextView
-        android:id="@+id/m_composer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/trade_winds"
-        android:text="@string/composer"
-        android:textSize="12dp"
-        app:layout_constraintStart_toEndOf="@+id/movie_picture"
-        app:layout_constraintTop_toBottomOf="@+id/producer" />
-
-    <TextView
-        android:id="@+id/m_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/trade_winds"
-        android:text="@string/description"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intro" />
-
-    <TextView
-        android:id="@+id/m_trailer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/trade_winds"
-        android:text="@string/trailer"
-        android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
-
-    <TextView
-        android:id="@+id/composer"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:fontFamily="@font/eagle_lake"
-        android:singleLine="false"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/m_composer"
-        app:layout_constraintTop_toBottomOf="@+id/producer" />
-
-    <VideoView
-        android:id="@+id/trailer"
-        android:layout_width="match_parent"
-        android:layout_height="165dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/m_trailer" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/movie_picture"
+                android:layout_width="142dp"
+                android:layout_height="205dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/exmaple_mp" />
+
+                <TextView
+                    android:id="@+id/m_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toEndOf="@+id/movie_picture"
+                    android:layout_toRightOf="@+id/movie_picture"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/title"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toEndOf="@+id/m_title"
+                    android:layout_toRightOf="@+id/m_title"
+                    android:fontFamily="@font/eagle_lake"
+                    android:gravity="center"
+                    android:singleLine="false"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp"/>
+                <TextView
+                    android:id="@+id/m_director"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/m_title"
+                    android:layout_marginStart="160dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/director"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/director"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/m_title"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_toEndOf="@+id/m_director"
+                    android:layout_toRightOf="@+id/m_director"
+                    android:fontFamily="@font/eagle_lake"
+                    android:gravity="start"
+                    android:singleLine="false"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/m_producer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/m_director"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/movie_picture"
+                    android:layout_toRightOf="@+id/movie_picture"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/producer"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp"/>
+                <TextView
+                    android:id="@+id/producer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/m_director"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/m_producer"
+                    android:layout_toRightOf="@+id/m_producer"
+                    android:fontFamily="@font/eagle_lake"
+                    android:singleLine="false"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/m_composer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/m_producer"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/movie_picture"
+                    android:layout_toRightOf="@+id/movie_picture"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/composer"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/composer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/m_producer"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/m_composer"
+                    android:layout_toRightOf="@+id/m_composer"
+                    android:fontFamily="@font/eagle_lake"
+                    android:singleLine="false"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/m_running_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/m_composer"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/movie_picture"
+                    android:layout_toRightOf="@+id/movie_picture"
+                    android:text="@string/running_time"
+                    android:fontFamily="@font/trade_winds"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/running_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/m_composer"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/m_running_time"
+                    android:layout_toRightOf="@+id/m_running_time"
+                    android:fontFamily="@font/eagle_lake"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/m_rt_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/m_running_time"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/movie_picture"
+                    android:layout_toRightOf="@+id/movie_picture"
+                    android:fontFamily="@font/trade_winds"
+                    android:text="@string/rt_score"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/rt_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/m_running_time"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/m_rt_score"
+                    android:layout_toRightOf="@+id/m_rt_score"
+                    android:fontFamily="@font/eagle_lake"
+                    android:textColor="#F4F1F1"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/intro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/trade_winds"
+                android:gravity="center"
+                android:textColor="#F4F1F1" />
+
+            <TextView
+                android:id="@+id/m_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/trade_winds"
+                android:text="@string/description"
+                android:textColor="#F4F1F1"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="@font/eagle_lake"
+                android:textColor="#F4F1F1"
+                android:gravity="center_horizontal|top"
+                android:singleLine="false"
+                android:textSize="12sp" />
+
+
+            <TextView
+                android:id="@+id/m_trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/trade_winds"
+                android:textColor="#F4F1F1"
+                android:text="@string/trailer"
+                android:textSize="12sp" />
+
+        <VideoView
+                android:id="@+id/trailer"
+                android:layout_width="225dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
