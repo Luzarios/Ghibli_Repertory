@@ -6,15 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ghibli_list"
-    tools:context=".ListActivity">
+    tools:context=".presentation.view.ListActivity">
 
-    <!-- <androidx.appcompat.widget.Toolbar
-     android:id="@+id/toolbar"
-     android:layout_width="match_parent"
-     android:layout_height="?attr/actionBarSize"
-     android:background="#28FF7300"
-     app:popupTheme="@style/AppTheme.PopupOverlay" />
--->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"

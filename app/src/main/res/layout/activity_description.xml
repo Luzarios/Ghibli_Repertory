@@ -29,7 +29,7 @@
                 android:layout_height="205dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/exmaple_mp" />
 
@@ -42,10 +42,10 @@
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@+id/movie_picture"
                     android:layout_toRightOf="@+id/movie_picture"
-                    android:fontFamily="@font/trade_winds"
                     android:text="@string/title"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/title"
@@ -56,23 +56,25 @@
                     android:layout_marginTop="15dp"
                     android:layout_toEndOf="@+id/m_title"
                     android:layout_toRightOf="@+id/m_title"
-                    android:fontFamily="@font/eagle_lake"
                     android:gravity="center"
                     android:singleLine="false"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold|italic" />
                 <TextView
                     android:id="@+id/m_director"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/m_title"
-                    android:layout_marginStart="160dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="45dp"
-                    android:fontFamily="@font/trade_winds"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/movie_picture"
+                    android:layout_toRightOf="@+id/movie_picture"
                     android:text="@string/director"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/director"
@@ -81,14 +83,13 @@
                     android:layout_below="@+id/m_title"
                     android:layout_marginStart="5dp"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="45dp"
+                    android:layout_marginTop="20dp"
                     android:layout_toEndOf="@+id/m_director"
                     android:layout_toRightOf="@+id/m_director"
-                    android:fontFamily="@font/eagle_lake"
                     android:gravity="start"
                     android:singleLine="false"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
                 <TextView
                     android:id="@+id/m_producer"
                     android:layout_width="wrap_content"
@@ -99,10 +100,10 @@
                     android:layout_marginTop="20dp"
                     android:layout_toEndOf="@+id/movie_picture"
                     android:layout_toRightOf="@+id/movie_picture"
-                    android:fontFamily="@font/trade_winds"
                     android:text="@string/producer"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/producer"
                     android:layout_width="wrap_content"
@@ -113,10 +114,9 @@
                     android:layout_marginTop="20dp"
                     android:layout_toEndOf="@+id/m_producer"
                     android:layout_toRightOf="@+id/m_producer"
-                    android:fontFamily="@font/eagle_lake"
                     android:singleLine="false"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"/>
 
                 <TextView
                     android:id="@+id/m_composer"
@@ -128,10 +128,10 @@
                     android:layout_marginTop="20dp"
                     android:layout_toEndOf="@+id/movie_picture"
                     android:layout_toRightOf="@+id/movie_picture"
-                    android:fontFamily="@font/trade_winds"
                     android:text="@string/composer"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/composer"
@@ -143,10 +143,9 @@
                     android:layout_marginTop="20dp"
                     android:layout_toEndOf="@+id/m_composer"
                     android:layout_toRightOf="@+id/m_composer"
-                    android:fontFamily="@font/eagle_lake"
                     android:singleLine="false"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
                 <TextView
                     android:id="@+id/m_running_time"
                     android:layout_width="wrap_content"
@@ -158,9 +157,9 @@
                     android:layout_toEndOf="@+id/movie_picture"
                     android:layout_toRightOf="@+id/movie_picture"
                     android:text="@string/running_time"
-                    android:fontFamily="@font/trade_winds"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp">
+                    android:textSize="14sp"
+                    android:textStyle="bold">
                 </TextView>
 
                 <TextView
@@ -173,9 +172,8 @@
                     android:layout_marginTop="20dp"
                     android:layout_toEndOf="@+id/m_running_time"
                     android:layout_toRightOf="@+id/m_running_time"
-                    android:fontFamily="@font/eagle_lake"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp">
+                    android:textSize="14sp">
                 </TextView>
 
                 <TextView
@@ -188,10 +186,10 @@
                     android:layout_marginTop="20dp"
                     android:layout_toEndOf="@+id/movie_picture"
                     android:layout_toRightOf="@+id/movie_picture"
-                    android:fontFamily="@font/trade_winds"
                     android:text="@string/rt_score"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/rt_score"
@@ -203,9 +201,8 @@
                     android:layout_marginTop="20dp"
                     android:layout_toEndOf="@+id/m_rt_score"
                     android:layout_toRightOf="@+id/m_rt_score"
-                    android:fontFamily="@font/eagle_lake"
                     android:textColor="#F4F1F1"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
 
             </RelativeLayout>
 
@@ -215,8 +212,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
-                android:fontFamily="@font/trade_winds"
                 android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
                 android:textColor="#F4F1F1" />
 
             <TextView
@@ -226,10 +224,10 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:fontFamily="@font/trade_winds"
                 android:text="@string/description"
+                android:textStyle="bold"
                 android:textColor="#F4F1F1"
-                android:textSize="12sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/description"
@@ -239,35 +237,49 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
-                android:fontFamily="@font/eagle_lake"
                 android:textColor="#F4F1F1"
                 android:gravity="center_horizontal|top"
                 android:singleLine="false"
-                android:textSize="12sp" />
-
+                android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/m_trailer"
+                android:id="@+id/m_movie_trailer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:fontFamily="@font/trade_winds"
-                android:textColor="#F4F1F1"
                 android:text="@string/trailer"
-                android:textSize="12sp" />
+                android:textStyle="bold"
+                android:textColor="#F4F1F1"
+                android:textSize="16sp" />
 
-        <VideoView
-                android:id="@+id/trailer"
-                android:layout_width="225dp"
-                android:layout_height="200dp"
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:id="@+id/movie_trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="15dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="15dp"/>
+                android:background="#000000"/>
+
+            <ImageButton
+                android:id="@+id/character_button"
+                android:onClick="touchCharacterButton"
+                android:layout_width="236dp"
+                android:layout_height="56dp"
+                android:background="@drawable/characters_csn"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:contentDescription="@string/todo" />
 
         </LinearLayout>
     </ScrollView>

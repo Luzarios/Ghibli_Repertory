@@ -1,10 +1,12 @@
-package com.example.ghiblirepertory;
+package com.example.ghiblirepertory.presentation.view;
 
 
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+
+import com.example.ghiblirepertory.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /* Define button actions, go to another activity */
     public void touchEntryButton(View view) {
         Intent intent = new Intent(this, ListActivity.class);
         startActivity(intent);

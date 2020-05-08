@@ -7,15 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ghibli_repertory"
-    tools:context=".MainActivity">
+    tools:context=".presentation.view.MainActivity">
 
-       <!-- <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#28FF7300"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
--->
     <Button
         android:id="@+id/entry_button"
         android:layout_width="fill_parent"
