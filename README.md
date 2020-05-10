@@ -16,7 +16,7 @@ Ce projet permet de mettre en pratique toutes les notions basiques du développe
 
 ## Logiciels utilisés
 ### <img src = "https://user-images.githubusercontent.com/63917571/81484222-27b7a680-9244-11ea-926d-98b4cbf25aaa.png" width="75" height="75"> Android Studio
-Environnement de développement choisi pour développer des apllications mobiles Android.
+Environnement de développement choisi pour développer des applications mobiles Android.
 
 ### <img src = "https://user-images.githubusercontent.com/63917571/81484226-2a1a0080-9244-11ea-91f1-4eb25c4ad807.png"> Paint Tool SAI
 Éditeur graphique raster léger et un logiciel de peinture pour Microsoft Windows.
@@ -43,13 +43,13 @@ Environnement de développement choisi pour développer des apllications mobiles
 
 ## Fonctionnalités
 ### Écran d'accueil
-`API Rest`: [Ghibli_API](https://github.com/Luzarios/Ghibli_Repertory/blob/master/Api.json), entièrement crééee sur [GitHub](https://github.com/).
+`API Rest`: [Ghibli_API](https://github.com/Luzarios/Ghibli_Repertory/blob/master/Api.json), entièrement créée sur [GitHub](https://github.com/).
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/63917571/81483724-93981000-9240-11ea-8079-2fd6139da022.png" width="270" height="480">
 </p>
  
-* _Press to continue_ : bouton qui permet d'accéder à la page suivante
+* _Press to continue_ : bouton qui permet d'accéder à la page suivante.
 
 ### Écran répertoire de films
 Affiche la liste des films Ghibli.
