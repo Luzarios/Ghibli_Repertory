@@ -1,4 +1,5 @@
 # Projet 3A - Application mobile : Ghibli Repertory 
+## Étudiante : _MOORGHEN Shéréna_
 Ce projet permet de mettre en pratique toutes les notions basiques du développement mobile vues en cours.
 
 À travers l'univers de [Ghibli](https://www.studioghibli.com.au/#films), cette application, nommée **Ghibli Repertory**, propose une description de chaque film produit par le studio d'animation japonais : _Studio Ghibli_.
@@ -42,6 +43,8 @@ Environnement de développement choisi pour développer des apllications mobiles
 
 ## Fonctionnalités
 ### Écran d'accueil
+`API Rest`: [Ghibli_API](https://github.com/Luzarios/Ghibli_Repertory/blob/master/Api.json), entièrement crééee sur [GitHub](https://github.com/).
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/63917571/81483724-93981000-9240-11ea-8079-2fd6139da022.png" width="270" height="480">
 </p>
@@ -65,7 +68,7 @@ Offre une description complète du film sélectionné.
 * _Characters coming soon..._ : bouton qui affiche un Toast "Coming soon..." (pour une future et éventuelle mise à jour de l'application).
 
 ## Art Design
-Concerne toute la partie graphique utilisée avec Paint Tool SAI pour l'application **Ghibli Repertory**.
+Concerne toute la partie graphique utilisée avec [Paint Tool SAI](https://www.systemax.jp/en/sai/) pour l'application **Ghibli Repertory**.
 
 ### Logo
 Logo représentant le personnage emblématique du [Studio Ghibli](http://www.ghibli.jp/).
@@ -77,5 +80,10 @@ Logo représentant le personnage emblématique du [Studio Ghibli](http://www.ghi
 ### Boutons
 Tous les boutons utilisés dans l'application.
 
-<img src = "https://user-images.githubusercontent.com/63917571/81495936-3d64b480-92b4-11ea-9128-f3206e849b49.png" width="350" hight="100" align="left">
-<img src ="https://user-images.githubusercontent.com/63917571/81495939-3f2e7800-92b4-11ea-81a2-1a347dfc7559.png" width="250" hight="50" align="right">
+<img src = "https://user-images.githubusercontent.com/63917571/81495936-3d64b480-92b4-11ea-9128-f3206e849b49.png" width="350" hight="100"> 
+ 
+<img src ="https://user-images.githubusercontent.com/63917571/81495939-3f2e7800-92b4-11ea-81a2-1a347dfc7559.png" width="250" hight="50">
+
+## Références
+### <img src = "https://user-images.githubusercontent.com/63917571/81484223-28e8d380-9244-11ea-8445-c3438950a9cb.png" width="75" height="75"> Pinterest
+Toutes les images utilisées sont issues du site [Pinterest](https://www.pinterest.fr/).
